@@ -5,7 +5,8 @@ import os
 app = Flask(__name__)
 
 # أضف مفتاح OpenAI الخاص بك هنا
-openai.api_key = "YOUR_OPENAI_API_KEY"
+import os
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route("/ask-gpt", methods=["POST"])
 def ask_gpt():
